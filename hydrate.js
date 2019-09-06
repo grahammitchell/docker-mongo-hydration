@@ -1,4 +1,4 @@
-conn = new Mongo('db');
+conn = new Mongo('the_actual_db');
 db = conn.getDB('foster-the-people');
 
 if ( db.getUsers().length == 0 ) {
