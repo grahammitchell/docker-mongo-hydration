@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  db:
+    image: "mongo:4.0-xenial"
+    ports:
+      - "27017:27017"
+
+  mongo:
+    image: "mongo:4.0-xenial"
+    depends_on:
+      - db
+    volumes:
+      - .:/work
+    command: sh -c "sleep 2 && mongo mongodb://db /work/hydrate.js"
+   
